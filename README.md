@@ -25,20 +25,24 @@ Steps:
 - Combine training and test data to create a final data set
 - Create a vector for the column names from the finalData, which will be used to select the desired mean() & stddev() columns
 
+
 2. Extract only the measurements on the mean and standard deviation for each measurement. 
 
 - Create a logicalVector that contains TRUE values for the ID, mean() & stddev() columns and FALSE for others
 - Subset finalData table based on the logicalVector to keep only desired columns
+
 
 3. Use descriptive activity names to name the activities in the data set
 
 - Merge the finalData set with the acitivityType table to include descriptive activity names
 - Updating the colNames vector to include the new column names after merge
 
+
 4. Appropriately label the data set with descriptive activity names. 
 
 - Cleaning up the variable names
 - Reassigning the new descriptive column names to the finalData set
+
 
 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
