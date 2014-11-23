@@ -5,14 +5,14 @@ As part of the Specialization Program @John's Hopkins Bloomberg School of Public
 
 TO-DO List:
 
-1. Merge the training and the test sets to create one data set.
-2. Extract only the measurements on the mean and standard deviation for each measurement. 
-3. Use descriptive activity names to name the activities in the data set
-4. Appropriately label the data set with descriptive activity names. 
-5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+A. Merge the training and the test sets to create one data set.
+B. Extract only the measurements on the mean and standard deviation for each measurement. 
+C. Use descriptive activity names to name the activities in the data set
+D. Appropriately label the data set with descriptive activity names. 
+E. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 
-1. Merge the training and the test sets to create one data set.
+A. Merge the training and the test sets to create one data set.
 
 Steps:
 - Set working directory to the location where the UCI HAR Dataset was unzipped
@@ -26,26 +26,30 @@ Steps:
 - Create a vector for the column names from the finalData, which will be used to select the desired mean() & stddev() columns
 
 
-2. Extract only the measurements on the mean and standard deviation for each measurement. 
+B. Extract only the measurements on the mean and standard deviation for each measurement. 
 
+Steps:
 - Create a logicalVector that contains TRUE values for the ID, mean() & stddev() columns and FALSE for others
 - Subset finalData table based on the logicalVector to keep only desired columns
 
 
-3. Use descriptive activity names to name the activities in the data set
+C. Use descriptive activity names to name the activities in the data set
 
+Steps:
 - Merge the finalData set with the acitivityType table to include descriptive activity names
 - Updating the colNames vector to include the new column names after merge
 
 
-4. Appropriately label the data set with descriptive activity names. 
+D. Appropriately label the data set with descriptive activity names. 
 
+Steps:
 - Cleaning up the variable names
 - Reassigning the new descriptive column names to the finalData set
 
 
-5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
+E. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
+Steps:
 - Create a new table, finalDataNoActivityType without the activityType column
 - Summarizing the finalDataNoActivityType table to include just the mean of each variable for each activity and each subject
 - Merging the tidyData with activityType to include descriptive acitvity names
